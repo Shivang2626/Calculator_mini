@@ -44,6 +44,13 @@ public class Calculator {
                     System.out.println("Power is : " + calc.getPower(num1, num2));
                     System.out.println("\n");
                     break;
+                case 4:
+                    System.out.print("Enter a number : ");
+                    num1 = scanner.nextDouble();
+                    System.out.println("Natural log is :" + calc.getNaturalLog(num1));
+                    System.out.println("\n");
+
+                    break;
 
                 default:
                     System.out.println("Turning Off......");
@@ -54,6 +61,24 @@ public class Calculator {
     private static final Logger logger = LogManager.getLogger(Calculator.class);
 
     public Calculator() {
+    }
+    public double getNaturalLog(double number1) {
+        logger.info("[NATURAL LOG OF] - " + number1);
+        double result = 0;
+        try {
+
+            if (number1 <0 ) {
+                result = Double.NaN;
+                throw new ArithmeticException("Exception Occurred");
+            }
+            else {
+                result = Math.log(number1);
+            }
+        } catch (ArithmeticException error) {
+            System.out.println("Exception Occurred");
+        }
+        logger.info("[RESULT - NATURAL LOG] - " + result);
+        return result;
     }
     public double getPower(double num1, double num2) {
         logger.info("[POWER - " + num1 + " RAISED TO] " + num2);
