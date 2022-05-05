@@ -22,6 +22,14 @@ public class Calculator {
                 return;
             }
             switch (ch) {
+                case 1:
+                    System.out.print("Enter Number : ");
+                    num1 = scanner.nextDouble();
+                    System.out.println("Factorial is : " + calc.getFactoral(num1));
+                    System.out.println("\n");
+
+                    break;
+
                 case 2:
                     System.out.print("Enter a number : ");
                     num1 = scanner.nextDouble();
@@ -38,6 +46,18 @@ public class Calculator {
     private static final Logger logger = LogManager.getLogger(Calculator.class);
 
     public Calculator() {
+    }
+    public double fact(double num) {
+        double facto = 1;
+        for(int i = 1; i <= num; ++i)
+        { facto *= i;   }
+        return  facto;
+    }
+    public double getFactoral(double num) {
+        logger.info("[FACTORIAL OF] - " + num);
+        double result = fact(num);
+        logger.info("[RESULT - FACTORIAL] - " + result);
+        return result;
     }
 
     public double getSquareRoot(double num) {
