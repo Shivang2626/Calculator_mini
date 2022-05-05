@@ -1,0 +1,6 @@
+---
+- name: Pull docker image of the Calculator
+  hosts: all
+  tasks:
+    - name: pull docker image
+      shell: docker pull shivang2626/calculator_mini
