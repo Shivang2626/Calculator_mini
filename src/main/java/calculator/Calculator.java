@@ -36,6 +36,14 @@ public class Calculator {
                     System.out.println("Square root is : " + calc.getSquareRoot(num1));
                     System.out.println("\n");
                     break;
+                case 3:
+                    System.out.print("Enter the first number : ");
+                    num1 = scanner.nextDouble();
+                    System.out.print("Enter the second number : ");
+                    num2 = scanner.nextDouble();
+                    System.out.println("Power is : " + calc.getPower(num1, num2));
+                    System.out.println("\n");
+                    break;
 
                 default:
                     System.out.println("Turning Off......");
@@ -46,6 +54,12 @@ public class Calculator {
     private static final Logger logger = LogManager.getLogger(Calculator.class);
 
     public Calculator() {
+    }
+    public double getPower(double num1, double num2) {
+        logger.info("[POWER - " + num1 + " RAISED TO] " + num2);
+        double result = Math.pow(num1,num2);
+        logger.info("[RESULT - POWER] - " + result);
+        return result;
     }
     public double fact(double num) {
         double facto = 1;
